@@ -54,24 +54,51 @@ A modern, responsive personal CV website built with HTML, CSS, and JavaScript. T
 
 3. Open your browser and navigate to `http://localhost:8080`
 
+## ✅ Complete the TODO Tasks
+
+**Don't know where to start?** This project includes comprehensive TODO comments throughout the codebase to guide you step by step!
+
+### 📝 TODO Checklist
+
+1. **`index.html`** - Personalize your CV:
+   - Replace placeholder text with your personal information
+   - Update contact details (email, phone, location, LinkedIn)
+   - Add your work experience and achievements
+   - List your education background
+   - Showcase your technical skills
+   - Highlight your featured projects
+
+2. **`css/style.css`** - Implement Dark Mode:
+   - Add dark mode CSS variables
+   - Create color scheme for dark theme
+   - Test theme switching
+
+3. **`js/main.js`** - Add Interactive Features:
+   - Implement dark mode toggle functionality
+   - Add localStorage to save theme preference
+   - Create smooth scrolling for navigation
+   - Implement scroll animations using IntersectionObserver
+   - Add click-to-copy email functionality
+   - Create notification system
+   - Add hover effects to skill tags
+
+> 💡 **Pro Tip**: Use GitHub Copilot to help you complete these TODOs! Simply start typing or use Copilot Chat to ask "How do I implement dark mode?" or "Show me how to use IntersectionObserver for scroll animations."
+
 ### Customize Your CV
 
 1. **Personal Information**: Edit `index.html` to update:
-   - Name, title, and contact information
-   - Work experience and achievements
-   - Education details
-   - Technical skills
-   - Featured projects
+   - Follow the TODO comments in the HTML file
+   - Replace all placeholder text with your actual information
 
 2. **Styling**: Modify `css/style.css` to:
    - Change color scheme (update CSS variables in `:root`)
+   - Implement dark mode styles (see TODO comments)
    - Adjust layout and spacing
-   - Customize fonts and typography
 
 3. **Functionality**: Enhance `js/main.js` to:
-   - Add new interactive features
-   - Modify existing animations
-   - Implement additional functionality
+   - Complete all TODO tasks for interactive features
+   - Use Copilot to help implement complex functionality
+   - Test each feature as you build it
 
 ## 🌐 Deploy to Azure
 

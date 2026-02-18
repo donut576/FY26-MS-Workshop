@@ -12,16 +12,19 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* TODO: Add dark mode CSS variables here */
-/* Hint: Create a body.dark-mode selector and override the CSS variables with dark theme colors */
-/* Example:
+/* Dark mode CSS variables */
 body.dark-mode {
     --primary-color: #3b82f6;
+    --secondary-color: #2563eb;
     --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
     --bg-primary: #111827;
-    ... add more dark mode variables
+    --bg-secondary: #1f2937;
+    --bg-card: #374151;
+    --border-color: #4b5563;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
-*/
 
 /* Reset and base styles */
 * {

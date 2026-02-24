@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             achievement1_3: '協助優化資料標註流程，提升團隊整體工作效率',
             educationTitle: '教育背景',
             degree: '資訊管理學系',
-            educationPeriod: '2023 - 2026',
+            educationPeriod: '2023 - 2027',
             university: '國立中央大學',
             educationDetails: 'GPA 4.3<br>112學年度管理學院院長獎',
             skillsTitle: '技術技能',
@@ -32,10 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
             backend: '後端',
             cloudDevOps: '雲端與開發維運',
             projectsTitle: '精選專案',
+            project1Title: 'Talent Swap',
             projectDesc: '以技能換技能為核心的媒合平台',
-            project2: '校園接駁車預約系統',
+            project2Title: '校園接駁車預約系統',
             project2Desc: '提供中央大學往返高鐵桃園站及中壢火車站的接駁車線上預約服務。支援四條路線每日六個時段的預約，並提供快捷查詢與預約提醒功能。',
-            project3: '個人作品集網站',
+            project3Title: '個人作品集網站',
+            viewProject: '查看作品 →',
             footer: '使用 HTML、CSS 和 JavaScript 建立。',
             themeButton: '🌙 深色模式'
         },
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             achievement1_3: 'Assisted in optimizing data annotation workflow, improving overall team efficiency',
             educationTitle: 'Education',
             degree: 'Information Management',
-            educationPeriod: '2023 - 2026',
+            educationPeriod: '2023 - 2027',
             university: 'National Central University',
             educationDetails: 'GPA 4.3<br>Dean\'s List Award, College of Management (2023-2024)',
             skillsTitle: 'Technical Skills',
@@ -63,10 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
             backend: 'Backend',
             cloudDevOps: 'Cloud & DevOps',
             projectsTitle: 'Featured Projects',
+            project1Title: 'Talent Swap',
             projectDesc: 'A skill-exchange platform connecting people to trade their expertise',
-            project2: 'Campus Shuttle Booking System',
+            project2Title: 'Campus Shuttle Booking System',
             project2Desc: 'An online reservation system for NCU shuttle buses connecting to Taoyuan HSR Station and Zhongli Train Station. Supporting 4 routes with 6 daily time slots, providing quick search and booking reminder features.',
-            project3: 'Personal Portfolio Website',
+            project3Title: 'Personal Portfolio Website',
+            viewProject: 'View Project →',
             footer: 'Built with HTML, CSS, and JavaScript.',
             themeButton: '☀️ Light Mode'
         }
@@ -142,11 +146,22 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update projects
         const projectCards = document.querySelectorAll('.project-card');
-        if (projectCards.length >= 3) {
+        if (projectCards.length >= 1) {
+            projectCards[0].querySelector('h4').textContent = t.project1Title;
             projectCards[0].querySelector('p').textContent = t.projectDesc;
-            projectCards[1].querySelector('h4').textContent = t.project2;
+            const link1 = projectCards[0].querySelector('.project-link');
+            if (link1) link1.textContent = t.viewProject;
+        }
+        if (projectCards.length >= 2) {
+            projectCards[1].querySelector('h4').textContent = t.project2Title;
             projectCards[1].querySelector('p').textContent = t.project2Desc;
-            projectCards[2].querySelector('h4').textContent = t.project3;
+            const link2 = projectCards[1].querySelector('.project-link');
+            if (link2) link2.textContent = t.viewProject;
+        }
+        if (projectCards.length >= 3) {
+            projectCards[2].querySelector('h4').textContent = t.project3Title;
+            const link3 = projectCards[2].querySelector('.project-link');
+            if (link3) link3.textContent = t.viewProject;
         }
         
         // Update footer

@@ -105,24 +105,31 @@ document.addEventListener('DOMContentLoaded', function() {
         if (periods.length >= 1) {
             periods[0].textContent = t.period1;
         }
-        if (periods.length >= 3) {
-            periods[2].textContent = t.educationPeriod;
-        }
         
         const companies = document.querySelectorAll('.company');
         if (companies.length >= 1) {
             companies[0].textContent = t.company1;
-        }
-        if (companies.length >= 3) {
-            companies[2].textContent = t.university;
         }
         
         const timelineHeaders = document.querySelectorAll('.timeline-header h4');
         if (timelineHeaders.length >= 1) {
             timelineHeaders[0].textContent = t.jobTitle1;
         }
-        if (timelineHeaders.length >= 3) {
-            timelineHeaders[2].textContent = t.degree;
+        
+        // Update education section specifically
+        const educationSection = document.querySelector('.education');
+        if (educationSection) {
+            const eduPeriod = educationSection.querySelector('.period');
+            if (eduPeriod) eduPeriod.textContent = t.educationPeriod;
+            
+            const eduCompany = educationSection.querySelector('.company');
+            if (eduCompany) eduCompany.textContent = t.university;
+            
+            const eduDegree = educationSection.querySelector('.timeline-header h4');
+            if (eduDegree) eduDegree.textContent = t.degree;
+            
+            const eduDetails = educationSection.querySelector('p:last-child');
+            if (eduDetails) eduDetails.innerHTML = t.educationDetails;
         }
         
         // Update achievements
@@ -132,9 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
             achievements[1].textContent = t.achievement1_2;
             achievements[2].textContent = t.achievement1_3;
         }
-        
-        // Update education
-        document.querySelector('.education p:last-child').innerHTML = t.educationDetails;
         
         // Update skills categories
         const skillCategories = document.querySelectorAll('.skill-category h4');

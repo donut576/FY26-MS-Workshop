@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const translations = {
         zh: {
             title: '個人履歷 - Sharon Chiu',
-            jobTitle: '應徵 前端實習工程師',
             tagline: '熱愛前端開發，追求優質使用者體驗',
             location: '桃園市中壢區',
             aboutTitle: '關於我',
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             degree: '資訊管理學系',
             educationPeriod: '2023 - 2027',
             university: '國立中央大學',
-            educationDetails: 'GPA 4.3<br>112學年度管理學院院長獎',
+            educationDetails: 'GPA 4.16<br>112學年度管理學院院長獎',
             skillsTitle: '技術技能',
             frontend: '前端',
             backend: '後端',
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         en: {
             title: 'Personal CV - Sharon Chiu',
-            jobTitle: 'Applying for Frontend Intern Engineer',
             tagline: 'Passionate about frontend development and quality user experience',
             location: 'Zhongli, Taoyuan',
             aboutTitle: 'About Me',
@@ -59,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             degree: 'Information Management',
             educationPeriod: '2023 - 2027',
             university: 'National Central University',
-            educationDetails: 'GPA 4.3<br>Dean\'s List Award, College of Management (2023-2024)',
+            educationDetails: 'GPA 4.16<br>Dean\'s List Award, College of Management (2023-2024)',
             skillsTitle: 'Technical Skills',
             frontend: 'Frontend',
             backend: 'Backend',
@@ -84,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.title = t.title;
         
         // Update profile info
-        document.querySelector('.title').textContent = t.jobTitle;
         document.querySelector('.tagline').textContent = t.tagline;
         
         // Update location

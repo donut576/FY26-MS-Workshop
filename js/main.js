@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
             projectDesc: '以技能換技能為核心的媒合平台',
             project2Title: '校園接駁車預約系統',
             project2Desc: '提供中央大學往返高鐵桃園站及中壢火車站的接駁車線上預約服務。支援四條路線每日六個時段的預約，並提供快捷查詢與預約提醒功能。',
-            project3Title: '個人作品集網站',
+            project3Title: 'BitoGuard: Crypto AML Risk Detection System',
+            project3Desc: '建立高精度加密交易洗錢風險偵測系統，整合 BitoPro API 與 30+ 行為特徵，採用 XGBoost、LightGBM、Isolation Forest 集成模型，並以 F1 最大化選出 0.78 風險閾值強化異常交易偵測。',
             viewProject: '查看作品 →',
             footer: '使用 HTML、CSS 和 JavaScript 建立。',
             themeButton: '🌙 深色模式'
@@ -67,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
             projectDesc: 'A skill-exchange platform connecting people to trade their expertise',
             project2Title: 'Campus Shuttle Booking System',
             project2Desc: 'An online reservation system for NCU shuttle buses connecting to Taoyuan HSR Station and Zhongli Train Station. Supporting 4 routes with 6 daily time slots, providing quick search and booking reminder features.',
-            project3Title: 'Personal Portfolio Website',
+            project3Title: 'BitoGuard: Crypto AML Risk Detection System',
+            project3Desc: 'Built a high-precision crypto AML risk detection system by integrating BitoPro API data and 30+ behavioral features, then optimized an ensemble of XGBoost, LightGBM, and Isolation Forest with F1 maximization to select a 0.78 risk threshold for imbalanced anomaly detection.',
             viewProject: 'View Project →',
             footer: 'Built with HTML, CSS, and JavaScript.',
             themeButton: '☀️ Light Mode'
@@ -161,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (projectCards.length >= 3) {
             projectCards[2].querySelector('h4').textContent = t.project3Title;
+            projectCards[2].querySelector('p').textContent = t.project3Desc;
             const link3 = projectCards[2].querySelector('.project-link');
             if (link3) link3.textContent = t.viewProject;
         }

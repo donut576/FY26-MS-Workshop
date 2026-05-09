@@ -1,19 +1,18 @@
 // Main JavaScript file for CV website
 
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Implement Dark Mode Toggle
+
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    
-    // Define content translations
+
+    // ── 翻譯內容 ──────────────────────────────────────────────
     const translations = {
         zh: {
             title: '個人履歷 - Sharon Chiu',
-            tagline: '熱愛前端開發，追求優質使用者體驗',
+            tagline: '您的專業標語',
             location: '桃園市中壢區',
             aboutTitle: '關於我',
-            aboutText: '就讀國立中央大學資訊管理學系，具備 Python、資料庫與前端開發基礎。積極參與競賽，接觸資料清洗、模型訓練與資料視覺化。規劃取得 AIF-C01 雲端證照，持續深化資料分析與雲端服務專業能力。',
+            aboutText: '就讀國立中央大學資訊管理學系，具備 Python、資料庫與前端開發基礎。積極參與競賽，接觸資料清洗、模型訓練與資料視覺化。取得 AIF-C01 雲端證照，持續深化資料分析與雲端服務專業能力。',
             experienceTitle: '工作經歷',
             jobTitle1: '暑期工讀生',
             period1: '2024年7月 - 2024年8月',
@@ -22,160 +21,147 @@ document.addEventListener('DOMContentLoaded', function() {
             achievement1_2: '完成近千筆資料的處理與標註工作，確保資料品質符合模型訓練需求',
             achievement1_3: '協助優化資料標註流程，提升團隊整體工作效率',
             educationTitle: '教育背景',
-            degree: '資訊管理學系',
+            degree: '我的學位',
             educationPeriod: '2023 - 2027',
             university: '國立中央大學',
-            educationDetails: 'GPA 4.16<br>112學年度管理學院院長獎',
+            educationDetails: 'GPA 4.16 / 4.3<br>112學年度管理學院院長獎',
             skillsTitle: '技術技能',
             frontend: '前端',
             backend: '後端',
+            mlDl: 'ML/DL',
             cloudDevOps: '雲端與開發維運',
             projectsTitle: '精選專案',
             project1Title: 'Talent Swap',
-            projectDesc: '以技能換技能為核心的媒合平台',
+            project1Desc: '以技能換技能為核心的媒合平台',
             project2Title: '校園接駁車預約系統',
             project2Desc: '提供中央大學往返高鐵桃園站及中壢火車站的接駁車線上預約服務。支援四條路線每日六個時段的預約，並提供快捷查詢與預約提醒功能。',
             project3Title: 'BitoGuard: Crypto AML Risk Detection System',
-            project3Desc: '建立高精度加密交易洗錢風險偵測系統，整合 BitoPro API 與 30+ 行為特徵，採用 XGBoost、LightGBM、Isolation Forest 集成模型，並以 F1 最大化選出 0.78 風險閾值強化異常交易偵測。',
+            project3Desc: '建立高精度加密交易洗錢風險偵測系統，整合 BitoPro API 資料與 30+ 行為特徵，並以 XGBoost、LightGBM、Isolation Forest 進行集成建模，在高度不平衡資料下以 F1 最大化挑選最佳 0.78 風險閾值，強化高風險異常交易偵測能力。',
             viewProject: '查看作品 →',
             footer: '使用 HTML、CSS 和 JavaScript 建立。',
-            themeButton: '🌙 深色模式'
+            themeButton: '🌙 深色模式',
+            emailCopied: '電子郵件已複製！'
         },
         en: {
             title: 'Personal CV - Sharon Chiu',
-            tagline: 'Passionate about frontend development and quality user experience',
+            tagline: 'Your Professional Tagline',
             location: 'Zhongli, Taoyuan',
             aboutTitle: 'About Me',
-            aboutText: 'Information Management student at National Central University with skills in Python, databases, and front-end development. Actively participating in competitions, gaining experience in data cleaning, model training, and visualization. Planning to obtain AIF-C01 cloud certification.',
+            aboutText: 'Information Management student at National Central University with skills in Python, databases, and front-end development. Actively participating in competitions, gaining experience in data cleaning, model training, and visualization. Obtained AIF-C01 cloud certification, continuously deepening expertise in data analysis and cloud services.',
             experienceTitle: 'Work Experience',
+            jobTitle1: 'Summer Intern',
             period1: 'July 2024 - August 2024',
             company1: 'Chunghwa Telecom Laboratories',
-            jobTitle1: 'Summer Intern',
             achievement1_1: 'Responsible for NLP data processing and annotation based on large language model fine-tuning for public opinion news, customer service dialogues, and judicial court decisions',
             achievement1_2: 'Completed processing and annotation of nearly 1,000 data entries, ensuring data quality meets model training requirements',
             achievement1_3: 'Assisted in optimizing data annotation workflow, improving overall team efficiency',
             educationTitle: 'Education',
-            degree: 'Information Management',
+            degree: 'Bachelor of Information Management',
             educationPeriod: '2023 - 2027',
             university: 'National Central University',
-            educationDetails: 'GPA 4.16<br>Dean\'s List Award, College of Management (2023-2024)',
+            educationDetails: 'GPA 4.16 / 4.3<br>Dean\'s List Award, College of Management (2023–2024)',
             skillsTitle: 'Technical Skills',
             frontend: 'Frontend',
             backend: 'Backend',
+            mlDl: 'ML/DL',
             cloudDevOps: 'Cloud & DevOps',
             projectsTitle: 'Featured Projects',
             project1Title: 'Talent Swap',
-            projectDesc: 'A skill-exchange platform connecting people to trade their expertise',
+            project1Desc: 'A skill-exchange platform connecting people to trade their expertise',
             project2Title: 'Campus Shuttle Booking System',
-            project2Desc: 'An online reservation system for NCU shuttle buses connecting to Taoyuan HSR Station and Zhongli Train Station. Supporting 4 routes with 6 daily time slots, providing quick search and booking reminder features.',
+            project2Desc: 'An online reservation system for NCU shuttle buses connecting to Taoyuan HSR Station and Zhongli Train Station. Supporting 4 routes with 6 daily time slots, with quick search and booking reminder features.',
             project3Title: 'BitoGuard: Crypto AML Risk Detection System',
-            project3Desc: 'Built a high-precision crypto AML risk detection system by integrating BitoPro API data and 30+ behavioral features, then optimized an ensemble of XGBoost, LightGBM, and Isolation Forest with F1 maximization to select a 0.78 risk threshold for imbalanced anomaly detection.',
+            project3Desc: 'Built a high-precision crypto AML risk detection system integrating BitoPro API data and 30+ behavioral features, using an ensemble of XGBoost, LightGBM, and Isolation Forest with F1 maximization to select a 0.78 risk threshold for imbalanced anomaly detection.',
             viewProject: 'View Project →',
             footer: 'Built with HTML, CSS, and JavaScript.',
-            themeButton: '☀️ Light Mode'
+            themeButton: '☀️ Light Mode',
+            emailCopied: 'Email copied!'
         }
     };
-    
-    // Function to update page content
+
+    // ── 套用翻譯到頁面 ────────────────────────────────────────
     function updateContent(lang) {
         const t = translations[lang];
-        
-        // Update document title
+
         document.title = t.title;
-        
-        // Update profile info
+        document.documentElement.lang = lang === 'zh' ? 'zh-TW' : 'en';
+
+        // 標語
         document.querySelector('.tagline').textContent = t.tagline;
-        
-        // Update location
-        document.querySelectorAll('.contact-item span')[5].textContent = t.location;
-        
-        // Update section titles
-        document.querySelectorAll('.section-title')[0].textContent = t.aboutTitle;
-        document.querySelectorAll('.section-title')[1].textContent = t.experienceTitle;
-        document.querySelectorAll('.section-title')[2].textContent = t.educationTitle;
-        document.querySelectorAll('.section-title')[3].textContent = t.skillsTitle;
-        document.querySelectorAll('.section-title')[4].textContent = t.projectsTitle;
-        
-        // Update about section
+
+        // 聯絡資訊：location 是第 3 個 .contact-item
+        const locationSpan = document.querySelector('.contact-item:nth-child(3) span:nth-child(2)');
+        if (locationSpan) locationSpan.textContent = t.location;
+
+        // 區塊標題
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles[0].textContent = t.aboutTitle;
+        sectionTitles[1].textContent = t.experienceTitle;
+        sectionTitles[2].textContent = t.educationTitle;
+        sectionTitles[3].textContent = t.skillsTitle;
+        sectionTitles[4].textContent = t.projectsTitle;
+
+        // 關於我
         document.querySelector('.about p').textContent = t.aboutText;
-        
-        // Update work experience
-        const periods = document.querySelectorAll('.period');
-        if (periods.length >= 1) {
-            periods[0].textContent = t.period1;
+
+        // 工作經歷
+        const expSection = document.querySelector('.experience');
+        if (expSection) {
+            expSection.querySelector('.timeline-header h4').textContent = t.jobTitle1;
+            expSection.querySelector('.period').textContent = t.period1;
+            expSection.querySelector('.company').textContent = t.company1;
+            const achievements = expSection.querySelectorAll('.achievements li');
+            if (achievements.length >= 3) {
+                achievements[0].textContent = t.achievement1_1;
+                achievements[1].textContent = t.achievement1_2;
+                achievements[2].textContent = t.achievement1_3;
+            }
         }
-        
-        const companies = document.querySelectorAll('.company');
-        if (companies.length >= 1) {
-            companies[0].textContent = t.company1;
+
+        // 教育背景
+        const eduSection = document.querySelector('.education');
+        if (eduSection) {
+            eduSection.querySelector('.timeline-header h4').textContent = t.degree;
+            eduSection.querySelector('.period').textContent = t.educationPeriod;
+            eduSection.querySelector('.company').textContent = t.university;
+            // 最後一個 <p> 是詳細資訊
+            const ps = eduSection.querySelectorAll('p');
+            ps[ps.length - 1].innerHTML = t.educationDetails;
         }
-        
-        const timelineHeaders = document.querySelectorAll('.timeline-header h4');
-        if (timelineHeaders.length >= 1) {
-            timelineHeaders[0].textContent = t.jobTitle1;
-        }
-        
-        // Update education section specifically
-        const educationSection = document.querySelector('.education');
-        if (educationSection) {
-            const eduPeriod = educationSection.querySelector('.period');
-            if (eduPeriod) eduPeriod.textContent = t.educationPeriod;
-            
-            const eduCompany = educationSection.querySelector('.company');
-            if (eduCompany) eduCompany.textContent = t.university;
-            
-            const eduDegree = educationSection.querySelector('.timeline-header h4');
-            if (eduDegree) eduDegree.textContent = t.degree;
-            
-            const eduDetails = educationSection.querySelector('p:last-child');
-            if (eduDetails) eduDetails.innerHTML = t.educationDetails;
-        }
-        
-        // Update achievements
-        const achievements = document.querySelectorAll('.achievements li');
-        if (achievements.length >= 3) {
-            achievements[0].textContent = t.achievement1_1;
-            achievements[1].textContent = t.achievement1_2;
-            achievements[2].textContent = t.achievement1_3;
-        }
-        
-        // Update skills categories
+
+        // 技能分類標題（4 個）
         const skillCategories = document.querySelectorAll('.skill-category h4');
-        if (skillCategories.length >= 3) {
+        if (skillCategories.length >= 4) {
             skillCategories[0].textContent = t.frontend;
             skillCategories[1].textContent = t.backend;
-            skillCategories[2].textContent = t.cloudDevOps;
+            skillCategories[2].textContent = t.mlDl;
+            skillCategories[3].textContent = t.cloudDevOps;
         }
-        
-        // Update projects
+
+        // 專案卡片（3 張）
         const projectCards = document.querySelectorAll('.project-card');
-        if (projectCards.length >= 1) {
-            projectCards[0].querySelector('h4').textContent = t.project1Title;
-            projectCards[0].querySelector('p').textContent = t.projectDesc;
-            const link1 = projectCards[0].querySelector('.project-link');
-            if (link1) link1.textContent = t.viewProject;
-        }
-        if (projectCards.length >= 2) {
-            projectCards[1].querySelector('h4').textContent = t.project2Title;
-            projectCards[1].querySelector('p').textContent = t.project2Desc;
-            const link2 = projectCards[1].querySelector('.project-link');
-            if (link2) link2.textContent = t.viewProject;
-        }
-        if (projectCards.length >= 3) {
-            projectCards[2].querySelector('h4').textContent = t.project3Title;
-            projectCards[2].querySelector('p').textContent = t.project3Desc;
-            const link3 = projectCards[2].querySelector('.project-link');
-            if (link3) link3.textContent = t.viewProject;
-        }
-        
-        // Update footer
-        document.querySelector('.footer p').innerHTML = '&copy; 2026 Sharon Chiu. ' + t.footer;
-        
-        // Update theme button
+        const projectData = [
+            { title: t.project1Title, desc: t.project1Desc },
+            { title: t.project2Title, desc: t.project2Desc },
+            { title: t.project3Title, desc: t.project3Desc }
+        ];
+        projectCards.forEach((card, i) => {
+            if (projectData[i]) {
+                card.querySelector('h4').textContent = projectData[i].title;
+                card.querySelector('p').textContent = projectData[i].desc;
+                const link = card.querySelector('.project-link');
+                if (link) link.textContent = t.viewProject;
+            }
+        });
+
+        // Footer
+        document.querySelector('.footer p').innerHTML = `&copy; 2026 Sharon Chiu. ${t.footer}`;
+
+        // 主題按鈕文字
         themeToggle.textContent = t.themeButton;
     }
-    
-    // Load saved theme when page loads
+
+    // ── 初始化：讀取儲存的主題 ────────────────────────────────
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
@@ -183,12 +169,11 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         updateContent('zh');
     }
-    
-    // Add click event listener to toggle theme
+
+    // ── 主題切換（同步語言）───────────────────────────────────
     themeToggle.addEventListener('click', function() {
         body.classList.toggle('dark-mode');
-        
-        // Update content based on current theme
+
         if (body.classList.contains('dark-mode')) {
             updateContent('en');
             localStorage.setItem('theme', 'dark');
@@ -197,27 +182,21 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', 'light');
         }
     });
-    
-    // Add smooth scrolling for anchor links
+
+    // ── 平滑捲動 ──────────────────────────────────────────────
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
-    
-    // Add scroll animations to sections
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
+
+    // ── 捲動進場動畫 ──────────────────────────────────────────
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -225,17 +204,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
-    
-    // Observe all sections
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
     document.querySelectorAll('.section').forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(section);
     });
-    
-    // Add a function to show notifications
+
+    // ── 通知提示 ──────────────────────────────────────────────
     function showNotification(message, duration = 3000) {
         const notification = document.createElement('div');
         notification.textContent = message;
@@ -253,51 +231,40 @@ document.addEventListener('DOMContentLoaded', function() {
             transform: translateX(100px);
             transition: opacity 0.3s ease, transform 0.3s ease;
         `;
-        
         document.body.appendChild(notification);
-        
-        // Trigger animation
         setTimeout(() => {
             notification.style.opacity = '1';
             notification.style.transform = 'translateX(0)';
         }, 10);
-        
-        // Remove notification after duration
         setTimeout(() => {
             notification.style.opacity = '0';
             notification.style.transform = 'translateX(100px)';
-            setTimeout(() => {
-                document.body.removeChild(notification);
-            }, 300);
+            setTimeout(() => document.body.removeChild(notification), 300);
         }, duration);
     }
-    
-    // Add click-to-copy functionality for email
-    const emailElement = document.querySelector('.contact-item span:nth-child(2)');
-    if (emailElement) {
-        emailElement.style.cursor = 'pointer';
-        emailElement.addEventListener('click', function() {
+
+    // ── 點擊複製 Email ────────────────────────────────────────
+    const emailSpan = document.querySelector('.contact-item:nth-child(1) span:nth-child(2)');
+    if (emailSpan) {
+        emailSpan.style.cursor = 'pointer';
+        emailSpan.addEventListener('click', function() {
             const email = this.textContent.trim();
             navigator.clipboard.writeText(email).then(() => {
-                const currentLang = body.classList.contains('dark-mode') ? 'en' : 'zh';
-                const message = currentLang === 'zh' ? '電子郵件已複製！' : 'Email copied!';
-                showNotification(message);
-            }).catch(err => {
-                console.error('Failed to copy email:', err);
-            });
+                const lang = body.classList.contains('dark-mode') ? 'en' : 'zh';
+                showNotification(translations[lang].emailCopied);
+            }).catch(err => console.error('Failed to copy email:', err));
         });
     }
-    
-    // Add hover effects to skill tags
+
+    // ── 技能標籤 hover 效果 ───────────────────────────────────
     document.querySelectorAll('.skill-tag').forEach(tag => {
         tag.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.1) translateY(-2px)';
         });
-        
         tag.addEventListener('mouseleave', function() {
             this.style.transform = 'scale(1) translateY(0)';
         });
     });
-    
+
     console.log('CV website loaded successfully!');
 });

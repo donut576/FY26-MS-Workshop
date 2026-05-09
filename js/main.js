@@ -35,8 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
             project1Desc: '以技能換技能為核心的媒合平台',
             project2Title: '校園接駁車預約系統',
             project2Desc: '提供中央大學往返高鐵桃園站及中壢火車站的接駁車線上預約服務。支援四條路線每日六個時段的預約，並提供快捷查詢與預約提醒功能。',
-            project3Title: 'BitoGuard: Crypto AML Risk Detection System',
-            project3Desc: '建立高精度加密交易洗錢風險偵測系統，整合 BitoPro API 資料與 30+ 行為特徵，並以 XGBoost、LightGBM、Isolation Forest 進行集成建模，在高度不平衡資料下以 F1 最大化挑選最佳 0.78 風險閾值，強化高風險異常交易偵測能力。',
+            project3Title: 'Artwork Artist Classification: ARTCNN',
+            project3Desc: '設計含 Squeeze-and-Excitation (SE) block 與殘差連接的自刻 CNN，針對 50 位畫家、36 倍類別不平衡資料以反比頻率類別權重補償，並實作 4 向翻轉 TTA 集成推論，最終於 Kaggle Best Artworks 資料集達成 52.7% 測試準確率。',
+            project4Title: 'Sentiment Analysis: BERT Fine-tuning',
+            project4Desc: '在 50,000 筆 IMDB 影評資料集上 fine-tune bert-base-uncased，接上自定義雙層分類頭（768 → 256 → 2），結合 AdamW、線性 warmup scheduler 與梯度裁剪穩定訓練，最終二元情緒分類測試準確率達 92.36%。',
+            project5Title: 'Taoyuan 3D Geo-AI Air Quality Forecasting System',
+            project5Desc: '建立桃園市 3KM × 3KM 網格化即時空氣品質預報系統，以 React Native + PostgreSQL + PostGIS 為基礎建設，整合 EPA 測站、LiDAR 垂直剖面與 NASA MODIS 等多源資料，採 Hybrid Kriging × Random Forest 模型推估全區 PM2.5 濃度，並提供 2D 熱點圖與 12 小時歷史回放功能。',
             viewProject: '查看作品 →',
             footer: '使用 HTML、CSS 和 JavaScript 建立。',
             themeButton: '🌙 深色模式',
@@ -70,8 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
             project1Desc: 'A skill-exchange platform connecting people to trade their expertise',
             project2Title: 'Campus Shuttle Booking System',
             project2Desc: 'An online reservation system for NCU shuttle buses connecting to Taoyuan HSR Station and Zhongli Train Station. Supporting 4 routes with 6 daily time slots, with quick search and booking reminder features.',
-            project3Title: 'BitoGuard: Crypto AML Risk Detection System',
-            project3Desc: 'Built a high-precision crypto AML risk detection system integrating BitoPro API data and 30+ behavioral features, using an ensemble of XGBoost, LightGBM, and Isolation Forest with F1 maximization to select a 0.78 risk threshold for imbalanced anomaly detection.',
+            project3Title: 'Artwork Artist Classification: ARTCNN',
+            project3Desc: 'Designed a custom CNN with Squeeze-and-Excitation (SE) blocks and residual connections for 50-artist classification. Addressed 36x class imbalance with inverse-frequency class weights and implemented 4-way flip TTA ensemble inference, achieving 52.7% test accuracy on the Kaggle Best Artworks dataset.',
+            project4Title: 'Sentiment Analysis: BERT Fine-tuning',
+            project4Desc: 'Fine-tuned bert-base-uncased on 50,000 IMDB reviews with a custom two-layer classification head (768 → 256 → 2), using AdamW, linear warmup scheduler, and gradient clipping for stable training. Achieved 92.36% binary sentiment classification accuracy.',
+            project5Title: 'Taoyuan 3D Geo-AI Air Quality Forecasting System',
+            project5Desc: 'Built a 3KM × 3KM grid-based real-time air quality forecasting system for Taoyuan City using React Native, PostgreSQL, and PostGIS. Integrated multi-source data including EPA stations, LiDAR vertical profiles, and NASA MODIS, applying a Hybrid Kriging × Random Forest model to estimate PM2.5 concentration with 2D heatmap and 12-hour playback features.',
             viewProject: 'View Project →',
             footer: 'Built with HTML, CSS, and JavaScript.',
             themeButton: '☀️ Light Mode',
@@ -138,12 +146,14 @@ document.addEventListener('DOMContentLoaded', function() {
             skillCategories[3].textContent = t.cloudDevOps;
         }
 
-        // 專案卡片（3 張）
+        // 專案卡片（5 張）
         const projectCards = document.querySelectorAll('.project-card');
         const projectData = [
             { title: t.project1Title, desc: t.project1Desc },
             { title: t.project2Title, desc: t.project2Desc },
-            { title: t.project3Title, desc: t.project3Desc }
+            { title: t.project3Title, desc: t.project3Desc },
+            { title: t.project4Title, desc: t.project4Desc },
+            { title: t.project5Title, desc: t.project5Desc }
         ];
         projectCards.forEach((card, i) => {
             if (projectData[i]) {

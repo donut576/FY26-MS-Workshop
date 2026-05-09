@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             university: '國立中央大學',
             educationDetails: 'GPA 4.16 / 4.3<br>112學年度管理學院院長獎',
             skillsTitle: '技術技能',
-            frontend: '前端',
+            frontend: '前端/後端',
             backend: '後端',
             mlDl: 'ML/DL',
             cloudDevOps: '雲端與開發維運',
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             university: 'National Central University',
             educationDetails: 'GPA 4.16 / 4.3<br>Dean\'s List Award, College of Management (2023–2024)',
             skillsTitle: 'Technical Skills',
-            frontend: 'Frontend',
+            frontend: 'Frontend / Backend',
             backend: 'Backend',
             mlDl: 'ML/DL',
             cloudDevOps: 'Cloud & DevOps',
@@ -137,13 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
             ps[ps.length - 1].innerHTML = t.educationDetails;
         }
 
-        // 技能分類標題（4 個）
+        // 技能分類標題（3 個）
         const skillCategories = document.querySelectorAll('.skill-category h4');
-        if (skillCategories.length >= 4) {
+        if (skillCategories.length >= 3) {
             skillCategories[0].textContent = t.frontend;
-            skillCategories[1].textContent = t.backend;
-            skillCategories[2].textContent = t.mlDl;
-            skillCategories[3].textContent = t.cloudDevOps;
+            skillCategories[1].textContent = t.mlDl;
+            skillCategories[2].textContent = t.cloudDevOps;
         }
 
         // 專案卡片（5 張）
